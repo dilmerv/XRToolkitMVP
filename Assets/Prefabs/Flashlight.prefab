@@ -131,7 +131,7 @@ Transform:
   - {fileID: 1765291962215157168}
   - {fileID: 5566675517062086942}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!33 &214772256564833644
 MeshFilter:
@@ -247,9 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2855595005822713249}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
