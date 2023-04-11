@@ -23,6 +23,12 @@ public class DoorFeature : BaseFeature
     [SerializeField]
     private bool open = false;
 
+    public bool Open 
+    {
+        get => open;
+        set => open = value;
+    }
+
     [Header("Interaction Configuration")]
     [SerializeField]
     private XRSocketInteractor socketInteractor;
