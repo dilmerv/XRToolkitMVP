@@ -47,9 +47,15 @@ public class DrawerFeature : BaseFeature
     { 
         while(true)
         {
-            if (open && drawerPivot.localPosition.z <= maxDistance)
+            if (!open) continue;
+
+            if (direction == FeatureDirection.Forward && drawerPivot.localPosition.z <= maxDistance)
             {
                 drawerPivot.Translate(Vector3.forward * Time.deltaTime * speed);
+            }
+            else if (direction == FeatureDirection.Backward && drawerPivot.localPosition.z >= maxDistance)
+            {
+                drawerPivot.Translate(-Vector3.forward * Time.deltaTime * speed);
             }
             yield return null;
         }

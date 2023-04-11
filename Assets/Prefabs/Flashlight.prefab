@@ -425,7 +425,6 @@ GameObject:
   m_Component:
   - component: {fileID: 994934128450594742}
   - component: {fileID: 321285105924188521}
-  - component: {fileID: 2097505526333328152}
   - component: {fileID: 8491649613246574066}
   - component: {fileID: 7154328337358901829}
   - component: {fileID: 6213160518309869501}
@@ -483,27 +482,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 8818888120319065556}
   m_Enabled: 1
---- !u!135 &2097505526333328152
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8135409247341569013}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 2.06
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8491649613246574066
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -545,7 +523,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 2097505526333328152}
+  - {fileID: 6397268264913052159}
+  - {fileID: 2398276167333762408}
+  - {fileID: 6933706547236144468}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
