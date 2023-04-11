@@ -23,7 +23,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6718124898103358440
 Transform:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AffordanceStateProvider: {fileID: 3069222423253910036}
-  m_ReplaceIdleStateValueWithInitialValue: 0
+  m_ReplaceIdleStateValueWithInitialValue: 1
   m_AffordanceThemeDatum:
     m_UseConstant: 0
     m_ConstantValue:
@@ -630,7 +630,7 @@ MonoBehaviour:
   minAngle: 0
   maxAngle: 150
   reverseAngleDirection: 1
-  speed: 20
+  speed: 30
   open: 0
   socketInteractor: {fileID: 0}
   simpleInteractable: {fileID: 737387735273587684}

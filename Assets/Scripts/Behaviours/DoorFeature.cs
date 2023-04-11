@@ -65,6 +65,8 @@ public class DoorFeature : BaseFeature
             var angle = doorPivot.localEulerAngles.y < 180 ? doorPivot.localEulerAngles.y :
                 doorPivot.localEulerAngles.y - 360;
 
+            angle = reverseAngleDirection ? Mathf.Abs(angle) : angle;
+
             if (open && angle <= maxAngle)
             {
                 doorPivot?.Rotate(Vector3.up, speed * Time.deltaTime * (reverseAngleDirection ? -1 : 1));
