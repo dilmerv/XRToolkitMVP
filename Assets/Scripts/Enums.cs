@@ -3,3 +3,11 @@
     Once,
     Toggle
 }
+
+public enum FeatureDirection
+{
+    Forward,
+    Backward,
+    Left,
+    Right
+}
