@@ -14,3 +14,6 @@ A few MVP projects to apply all lessons learned through [Learn XR](https://www.l
     ```bash
     $ git lfs fetch
     ```
+
+## Important Audio License info 🔊
+All the SFX or Music in this repo is licensed by [Soundstripe](https://app.soundstripe.com) which means that Learn XR has a comercial license, however a [license](https://www.soundstripe.com/?fpr=signup#pricing) is required if you like to use any of these tracks on your own commercial experience, thank you.
