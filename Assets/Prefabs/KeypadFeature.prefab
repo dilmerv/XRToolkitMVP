@@ -177,8 +177,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.82, y: -0.173}
-  m_SizeDelta: {x: 25, y: 30}
+  m_AnchoredPosition: {x: 0.60716504, y: -0.173}
+  m_SizeDelta: {x: 20, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2554850344820610915
 CanvasRenderer:
@@ -365,8 +365,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 9.975869, y: 4.560891, z: 17.008224}
-  m_Center: {x: -0.036866967, y: 1.6367402, z: 0.076042615}
+  m_Size: {x: 5.3543124, y: 1.8928932, z: 6.924429}
+  m_Center: {x: 0.005087257, y: 0.3027397, z: -0.028970592}
 --- !u!1 &2522097616708646041
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,18 +429,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Log, Assembly-CSharp
-        m_MethodName: LogInfo
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Yes you found the combination !
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorFeature, Assembly-CSharp
         m_MethodName: OpenDoor
         m_Mode: 1
@@ -450,7 +438,19 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Yes you found the combination !
-          m_BoolArgument: 1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3882318903216780395}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Yes you found the combination !
+          m_BoolArgument: 0
         m_CallState: 2
   keycodesAnswer: 250
 --- !u!114 &498250406753241617
@@ -914,7 +914,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0.07
+  m_Spacing: 0.04
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -1306,8 +1306,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.18, y: -0.173}
-  m_SizeDelta: {x: 25, y: 30}
+  m_AnchoredPosition: {x: 0.12716502, y: -0.173}
+  m_SizeDelta: {x: 20, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7318471308260122904
 CanvasRenderer:
@@ -1432,7 +1432,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.04, y: 0.24}
-  m_SizeDelta: {x: 1, y: 0.346}
+  m_SizeDelta: {x: 0.73433, y: 0.346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1025738492479762784
 Canvas:
@@ -1608,8 +1608,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 4.75
-  m_fontSizeBase: 4.75
+  m_fontSize: 4.01
+  m_fontSizeBase: 4.01
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1836,8 +1836,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.5, y: -0.173}
-  m_SizeDelta: {x: 25, y: 30}
+  m_AnchoredPosition: {x: 0.367165, y: -0.173}
+  m_SizeDelta: {x: 20, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7687876421913213677
 CanvasRenderer:
@@ -2790,8 +2790,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.82, y: -0.391}
-  m_SizeDelta: {x: 25, y: 6.3356}
+  m_AnchoredPosition: {x: 0.616, y: -0.391}
+  m_SizeDelta: {x: 23.8632, y: 6.3356}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4086251801759197065
 CanvasRenderer:
@@ -3217,8 +3217,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.131, y: -0.2166}
-  m_SizeDelta: {x: 63.8229, y: 7.1711}
+  m_AnchoredPosition: {x: -0.1237, y: -0.2166}
+  m_SizeDelta: {x: 48.5235, y: 7.1711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &160319242669312214
 CanvasRenderer:
@@ -3275,8 +3275,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3.94
-  m_fontSizeBase: 3.94
+  m_fontSize: 3.18
+  m_fontSizeBase: 3.18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
