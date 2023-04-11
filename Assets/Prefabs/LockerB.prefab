@@ -632,5 +632,6 @@ MonoBehaviour:
   reverseAngleDirection: 1
   speed: 30
   open: 0
+  makeItKinematicOnceOpened: 1
   socketInteractor: {fileID: 0}
   simpleInteractable: {fileID: 737387735273587684}

@@ -23,6 +23,9 @@ public class DoorFeature : BaseFeature
     [SerializeField]
     private bool open = false;
 
+    [SerializeField]
+    private bool makeItKinematicOnceOpened;
+
     public bool Open 
     {
         get => open;
@@ -83,6 +86,8 @@ public class DoorFeature : BaseFeature
             else
             {
                 open = false;
+                var featureRigidBody = GetComponent<Rigidbody>();
+                if(featureRigidBody != null && makeItKinematicOnceOpened) featureRigidBody.isKinematic = true;
             }
             yield return null;
         }
