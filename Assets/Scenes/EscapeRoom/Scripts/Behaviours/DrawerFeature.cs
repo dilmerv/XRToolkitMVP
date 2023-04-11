@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -22,33 +21,33 @@ public class DrawerFeature : BaseFeature
     [SerializeField]
     private bool open = false;
 
-    private float distance;
-
     [Header("Interaction Configuration")]
     [SerializeField]
     private XRSimpleInteractable simpleInteractable;
 
     private void Start()
     {
-        StartCoroutine(ProcessMotion());
-
         // doors with simple selections (no sockets)
         simpleInteractable?.selectEntered.AddListener((s) =>
         {
             if (!open)
             {
-                open = true;
-                PlayOnStarted();
+                OpenDrawer();
             }
         });
     }
 
+    private void OpenDrawer()
+    {
+        open = true;
+        StartCoroutine(ProcessMotion());
+        PlayOnStarted();
+    }
+
     private IEnumerator ProcessMotion()
     { 
-        while(true)
+        while(open)
         {
-            if (!open) continue;
-
             if (direction == FeatureDirection.Forward && drawerPivot.localPosition.z <= maxDistance)
             {
                 drawerPivot.Translate(Vector3.forward * Time.deltaTime * speed);
@@ -56,6 +55,10 @@ public class DrawerFeature : BaseFeature
             else if (direction == FeatureDirection.Backward && drawerPivot.localPosition.z >= maxDistance)
             {
                 drawerPivot.Translate(-Vector3.forward * Time.deltaTime * speed);
+            }
+            else
+            {
+                open = false;
             }
             yield return null;
         }

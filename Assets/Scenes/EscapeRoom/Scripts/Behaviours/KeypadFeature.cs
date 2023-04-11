@@ -15,6 +15,9 @@ public class KeypadFeature : BaseFeature
     private Button thirdCodeButton;
 
     [SerializeField]
+    private GameObject keypadUI;
+
+    [SerializeField]
     private UnityEvent OnKeycodesCorrect;
 
     [SerializeField]
@@ -64,5 +67,11 @@ public class KeypadFeature : BaseFeature
                 PlayOnStarted();
             }
         }
+    }
+
+    public void ToggleKeypad()
+    {
+        bool isActive = !keypadUI.activeSelf;
+        keypadUI.SetActive(isActive);
     }
 }

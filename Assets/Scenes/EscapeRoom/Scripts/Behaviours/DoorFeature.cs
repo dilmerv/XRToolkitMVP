@@ -38,13 +38,10 @@ public class DoorFeature : BaseFeature
 
     private void Start()
     {
-        StartCoroutine(ProcessDoorMotion());
-
         // doors with sockets
         socketInteractor?.selectEntered.AddListener((s) =>
         {
-            open = true;
-            PlayOnStarted();
+            OpenDoor();
         });
 
         socketInteractor?.selectExited.AddListener((s) =>
@@ -56,17 +53,23 @@ public class DoorFeature : BaseFeature
         // doors with simple selections (no sockets)
         simpleInteractable?.selectEntered.AddListener((s) =>
         {
-            if (!open)
-            {
-                open = true;
-                PlayOnStarted();
-            }
+            OpenDoor();
         });
     }
 
-    private IEnumerator ProcessDoorMotion()
+    public void OpenDoor()
+    {
+        if (!open)
+        {
+            open = true;
+            StartCoroutine(ProcessMotion());
+            PlayOnStarted();
+        }
+    }
+
+    private IEnumerator ProcessMotion()
     { 
-        while(true)
+        while(open)
         {
             var angle = doorPivot.localEulerAngles.y < 180 ? doorPivot.localEulerAngles.y :
                 doorPivot.localEulerAngles.y - 360;
@@ -77,9 +80,9 @@ public class DoorFeature : BaseFeature
             {
                 doorPivot?.Rotate(Vector3.up, speed * Time.deltaTime * (reverseAngleDirection ? -1 : 1));
             }
-            else if(!open && angle > minAngle)
+            else
             {
-                doorPivot?.Rotate(Vector3.up, -speed * Time.deltaTime * (reverseAngleDirection ? -1 : 1));
+                open = false;
             }
             yield return null;
         }
