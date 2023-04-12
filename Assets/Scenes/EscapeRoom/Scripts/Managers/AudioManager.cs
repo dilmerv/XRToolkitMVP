@@ -1,4 +1,5 @@
 using DilmerGames.Core.Singletons;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,17 +11,21 @@ public class AudioManager : Singleton<AudioManager>
 
     private AudioSource audioSource;
 
+    [Header("Events")]
+    public Action OnCurrentTrackEnded;
+
     public void Awake()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         StartCoroutine(ShuffleWhenItStopsPlaying());
+        ShuffleAndPlay();
     }
 
-    public void ShuffleAndPlay()
+    public void ShuffleAndPlay(GameState gameState = GameState.Playing)
     {
         if (tracks.Length > 0)
         {
-            audioSource.clip = tracks[Random.Range(0, tracks.Length - 1)];
+            audioSource.clip = tracks[UnityEngine.Random.Range(0, tracks.Length - 1)];
             audioSource.Play();
         }
     }
@@ -31,6 +36,7 @@ public class AudioManager : Singleton<AudioManager>
         {
             yield return new WaitUntil(() => !audioSource.isPlaying);
             ShuffleAndPlay();
+            OnCurrentTrackEnded?.Invoke();
         }
     }
 }

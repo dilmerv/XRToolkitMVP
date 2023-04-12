@@ -6,68 +6,66 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : Singleton<UIManager>
 {
+    [Header("UI Options")]
     [SerializeField]
     private float offsetPositionFromPlayer = 1.0f;
 
+    [SerializeField]
+    private GameObject menuContainer;
+
     private const string GAME_SCENE_NAME = "Game";
 
-    private const string MENU_SCENE_NAME = "Menu";
+    [Header("Events")]
+    public Action OnGameResumeActionExecuted;
 
-    private void OnEnable()
+    public void Awake()
     {
-        var playerHead = GameManager.Instance.Player.Camera.transform;
-        transform.position = playerHead.position + (playerHead.forward * offsetPositionFromPlayer);
-        transform.rotation = playerHead.rotation;
+        // bind to game manager events
+        GameManager.Instance.OnGamePaused += HandleMenuScene;
+        GameManager.Instance.OnGameResumed += HandleMenuScene;
+
+        // bind menu buttons
+        var menu = menuContainer.GetComponentInChildren<Menu>(true);
+
+        menu.ResumeButton.onClick.AddListener(() =>
+        {
+            HandleMenuScene(GameState.Playing);
+            OnGameResumeActionExecuted?.Invoke();
+        });
+
+        menu.RestartButton.onClick.AddListener(() => StartCoroutine(RestartMainScene()));
     }
 
-    public void HandleGameState()
+    private void OnDestroy()
     {
-        GameManager.Instance.GameState = GameManager.Instance.GameState == GameState.Playing ?
-            GameState.Paused : GameState.Playing;
+        GameManager.Instance.OnGamePaused -= HandleMenuScene;
+        GameManager.Instance.OnGameResumed -= HandleMenuScene;
+    }
 
-        if (GameManager.Instance.GameState == GameState.Paused)
+    private void HandleMenuScene(GameState gameState)
+    {
+        if (gameState == GameState.Paused)
         {
-            Time.timeScale = 0;
-            ControllerManager.Instance.ControllerRayInteractorsInput(active: true);
-            StartCoroutine(AddMenuScene());
+            menuContainer.SetActive(true);
+            PlaceMenuInFrontOfPlayer();
         }
         else
         {
-            Time.timeScale = 1;
-            ControllerManager.Instance.ControllerRayInteractorsInput(active: false);
-            StartCoroutine(UnloadMenuScene());
+            menuContainer.SetActive(false);
         }
     }
 
-    private IEnumerator UnloadMenuScene()
+    private void PlaceMenuInFrontOfPlayer()
     {
-        AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync(MENU_SCENE_NAME);
-        yield return unloadOperation;
+        // place UI in front of the player
+        var playerHead = GameManager.Instance.Player.Camera.transform;
+        menuContainer.transform.position = playerHead.position + (playerHead.forward * offsetPositionFromPlayer);
+        menuContainer.transform.rotation = playerHead.rotation;
     }
 
-    private IEnumerator AddMenuScene()
-    {
-        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(MENU_SCENE_NAME, LoadSceneMode.Additive);
-        yield return loadOperation;
-    }
     private IEnumerator RestartMainScene()
     {
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(GAME_SCENE_NAME);
         yield return loadOperation;
-    }
-
-    public void PauseGame()
-    { 
-        GameManager.Instance.GameState = GameState.Paused;
-    }
-
-    public void ResumeGame()
-    {
-        GameManager.Instance.GameState = GameState.Playing;
-    }
-
-    public void RestartGame()
-    {
-        StartCoroutine(RestartMainScene());
     }
 }
