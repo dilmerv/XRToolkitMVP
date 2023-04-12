@@ -2,55 +2,58 @@ using DilmerGames.Core.Singletons;
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class UIManager : Singleton<UIManager>
 {
     [SerializeField]
-    private Vector3 initialPositionFromPlayer = Vector3.forward;
+    private float offsetPositionFromPlayer = 1.0f;
+
+    private const string GAME_SCENE_NAME = "Game";
 
     private const string MENU_SCENE_NAME = "Menu";
 
     private void OnEnable()
     {
         var playerHead = GameManager.Instance.Player.Camera.transform;
-        transform.position = playerHead.position + initialPositionFromPlayer;
+        transform.position = playerHead.position + (playerHead.forward * offsetPositionFromPlayer);
         transform.rotation = playerHead.rotation;
     }
 
     public void HandleGameState()
     {
+        GameManager.Instance.GameState = GameManager.Instance.GameState == GameState.Playing ?
+            GameState.Paused : GameState.Playing;
+
         if (GameManager.Instance.GameState == GameState.Paused)
         {
-            StartCoroutine(UnloadMenu(() =>
-            {
-                GameManager.Instance.GameState = GameState.Playing;
-                Time.timeScale = 1;
-            }));
+            Time.timeScale = 0;
+            ControllerManager.Instance.ControllerRayInteractorsInput(active: true);
+            StartCoroutine(AddMenuScene());
         }
         else
         {
-            StartCoroutine(AddMenu(() =>
-            {
-                GameManager.Instance.GameState = GameState.Paused;
-                Time.timeScale = 0;
-            }));
+            Time.timeScale = 1;
+            ControllerManager.Instance.ControllerRayInteractorsInput(active: false);
+            StartCoroutine(UnloadMenuScene());
         }
     }
 
-    private IEnumerator UnloadMenu(Action callBack)
+    private IEnumerator UnloadMenuScene()
     {
         AsyncOperation unloadOperation = SceneManager.UnloadSceneAsync(MENU_SCENE_NAME);
         yield return unloadOperation;
-        callBack?.Invoke();
     }
 
-    private IEnumerator AddMenu(Action callBack)
+    private IEnumerator AddMenuScene()
     {
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(MENU_SCENE_NAME, LoadSceneMode.Additive);
         yield return loadOperation;
-        callBack?.Invoke();
+    }
+    private IEnumerator RestartMainScene()
+    {
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(GAME_SCENE_NAME);
+        yield return loadOperation;
     }
 
     public void PauseGame()
@@ -61,5 +64,10 @@ public class UIManager : Singleton<UIManager>
     public void ResumeGame()
     {
         GameManager.Instance.GameState = GameState.Playing;
+    }
+
+    public void RestartGame()
+    {
+        StartCoroutine(RestartMainScene());
     }
 }

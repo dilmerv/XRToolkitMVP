@@ -1,5 +1,61 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &552309679288672572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2023993677305885599}
+  - component: {fileID: 4087357663082659074}
+  m_Layer: 0
+  m_Name: ControllerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2023993677305885599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552309679288672572}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4055152347841216075}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4087357663082659074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552309679288672572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c75bc08ed320c419702b55247c60d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerMenuAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Controller Menu
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 52f4e6fc-6389-4f8a-9490-9668b1d2d024
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 4116954447336496447, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
 --- !u!1 &3902431194891153503
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,8 +134,9 @@ Transform:
   m_Children:
   - {fileID: 5668017205163445924}
   - {fileID: 6460763609385148039}
+  - {fileID: 2023993677305885599}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8550593532363281512
 GameObject:
@@ -125,9 +182,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da4bc85160eaed4da89540c937f6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xrOrigin: {fileID: 0}
   OnGameStarted:
     m_PersistentCalls:
       m_Calls: []
   OnGameLost:
     m_PersistentCalls:
       m_Calls: []
+  <GameState>k__BackingField: 0

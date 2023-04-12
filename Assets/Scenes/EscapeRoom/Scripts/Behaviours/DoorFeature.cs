@@ -9,9 +9,6 @@ public class DoorFeature : BaseFeature
     private Transform doorPivot;
 
     [SerializeField]
-    private float minAngle = 0;
-
-    [SerializeField]
     private float maxAngle = 90.0f;
 
     [SerializeField]
