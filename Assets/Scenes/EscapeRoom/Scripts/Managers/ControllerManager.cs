@@ -48,6 +48,24 @@ public class ControllerManager : Singleton<ControllerManager>
         foreach(var rayInteractor in cachedRayInteractors)
         {
             rayInteractor.gameObject.SetActive(gameState == GameState.Paused);
+            if(gameState == GameState.Paused)
+            {
+                ApplyDefaultLayers(rayInteractor.transform.parent, "UI");
+            }
+            else
+            {
+                ApplyDefaultLayers(rayInteractor.transform.parent, "Default");
+            }
+        }
+    }
+
+    private static void ApplyDefaultLayers(Transform rayParent, string layerName)
+    {
+        LayerMask uiLayerMask = LayerMask.NameToLayer(layerName);
+        rayParent.gameObject.layer = uiLayerMask;
+        foreach (Transform transform in rayParent.GetComponentsInChildren<Transform>())
+        {
+            transform.gameObject.layer = uiLayerMask;
         }
     }
 }

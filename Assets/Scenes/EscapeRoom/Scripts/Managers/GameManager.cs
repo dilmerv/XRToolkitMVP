@@ -19,8 +19,11 @@ public class GameManager : Singleton<GameManager>
 
     public Action<GameState> OnGameResumed;
 
+    private LayerMask cachedCameraCullingMask;
+
     private void Awake()
     {
+        cachedCameraCullingMask = xrOrigin.Camera.cullingMask;
         ControllerManager.Instance.OnControllerMenuActionExecuted += ChangeGameState;
         UIManager.Instance.OnGameResumeActionExecuted += ChangeGameState;
     }
@@ -39,11 +42,13 @@ public class GameManager : Singleton<GameManager>
         {
             OnGamePaused?.Invoke(GameState.Paused);
             Time.timeScale = 0;
+            xrOrigin.Camera.cullingMask = LayerMask.GetMask("UI");
         }
         else
         {
             OnGameResumed?.Invoke(GameState.Playing);
             Time.timeScale = 1;
+            xrOrigin.Camera.cullingMask = cachedCameraCullingMask;
         }
     }
 }
