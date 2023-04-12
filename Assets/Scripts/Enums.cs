@@ -11,3 +11,9 @@ public enum FeatureDirection
     Left,
     Right
 }
+
+public enum GameState
+{
+    Playing,
+    Paused
+}
