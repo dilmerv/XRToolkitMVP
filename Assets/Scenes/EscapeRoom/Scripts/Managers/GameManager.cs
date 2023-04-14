@@ -18,13 +18,13 @@ public class GameManager : Singleton<GameManager>
     {
         cachedCameraCullingMask = Camera.main.cullingMask;
         ControllerManager.Instance.OnControllerMenuActionExecuted += ChangeGameState;
-        UIManager.Instance.OnGameResumeActionExecuted += ChangeGameState;
+        UIManager.Instance.OnGameResumedActionExecuted += ChangeGameState;
     }
 
     private void OnDestroy()
     {
         ControllerManager.Instance.OnControllerMenuActionExecuted -= ChangeGameState;
-        UIManager.Instance.OnGameResumeActionExecuted -= ChangeGameState;
+        UIManager.Instance.OnGameResumedActionExecuted -= ChangeGameState;
     }
 
     private void ChangeGameState()

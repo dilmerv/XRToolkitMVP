@@ -15,7 +15,7 @@ public class UIManager : Singleton<UIManager>
     private const string GAME_SCENE_NAME = "Game";
 
     [Header("Events")]
-    public Action OnGameResumeActionExecuted;
+    public Action OnGameResumedActionExecuted;
 
     public void Awake()
     {
@@ -29,13 +29,13 @@ public class UIManager : Singleton<UIManager>
         menu.ResumeButton.onClick.AddListener(() =>
         {
             HandleMenuOptions(GameState.Playing);
-            OnGameResumeActionExecuted?.Invoke();
+            OnGameResumedActionExecuted?.Invoke();
         });
 
         menu.RestartButton.onClick.AddListener(() =>
         {
             SceneManager.LoadScene(GAME_SCENE_NAME);
-            OnGameResumeActionExecuted?.Invoke();
+            OnGameResumedActionExecuted?.Invoke();
         });
     }
 
