@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class UIManager : Singleton<UIManager>
 {
@@ -59,13 +58,15 @@ public class UIManager : Singleton<UIManager>
     private void PlaceMenuInFrontOfPlayer()
     {
         // place UI in front of the player
-        var playerHead = GameManager.Instance.Player.Camera.transform;
+        var playerHead = Camera.main.transform;
         menuContainer.transform.position = playerHead.position + (playerHead.forward * offsetPositionFromPlayer);
         menuContainer.transform.rotation = playerHead.rotation;
     }
 
     private IEnumerator RestartMainScene()
     {
+        // This call doesn't work with the XR Simulator, I reported this to Unity
+        // and it is a known bug
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(GAME_SCENE_NAME);
         yield return loadOperation;
     }
