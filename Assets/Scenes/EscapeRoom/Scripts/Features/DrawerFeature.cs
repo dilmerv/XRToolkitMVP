@@ -36,7 +36,7 @@ public class DrawerFeature : BaseFeature
         });
     }
 
-    private void OpenDrawer()
+    public void OpenDrawer()
     {
         open = true;
         PlayOnStarted();
