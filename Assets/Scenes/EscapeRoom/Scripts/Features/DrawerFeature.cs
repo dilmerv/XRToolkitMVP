@@ -20,6 +20,7 @@ public class DrawerFeature : BaseFeature
     [SerializeField]
     private bool open = false;
 
+    [Header("Interaction Configuration")]
     [SerializeField]
     private XRSimpleInteractable simpleInteractable;
 
