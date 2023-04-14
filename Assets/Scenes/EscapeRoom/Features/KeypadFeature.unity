@@ -1256,12 +1256,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 762907668}
     - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
-      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: m_StartingSelectFilters.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      propertyPath: m_StartingSelectFilters.Array.data[0]
+      value: 
+      objectReference: {fileID: 3828740854002248422}
+    - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1269,6 +1277,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3828740854002248427}
+    - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3828740854002248427}
     - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
@@ -1280,12 +1292,32 @@ PrefabInstance:
       value: ToggleKeypad
       objectReference: {fileID: 0}
     - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleKeypad
+      objectReference: {fileID: 0}
+    - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: KeypadFeature, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: KeypadFeature, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 498250406753241617, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885492524687841697, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: OnKeycodesCorrect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885492524687841697, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: OnKeycodesCorrect.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1885492524687841697, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
       propertyPath: OnKeycodesCorrect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1295,6 +1327,22 @@ PrefabInstance:
       propertyPath: OnKeycodesCorrect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 4439488139867058}
+    - target: {fileID: 1885492524687841697, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: OnKeycodesCorrect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LogInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885492524687841697, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: OnKeycodesCorrect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OpenDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885492524687841697, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: OnKeycodesCorrect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Log, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885492524687841697, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: OnKeycodesCorrect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DoorFeature, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1977933111783062866, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1342,6 +1390,10 @@ PrefabInstance:
     - target: {fileID: 2522097616708646041, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
       propertyPath: m_Name
       value: KeypadFeature
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119733878576247492, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+      propertyPath: m_PokeConfiguration.m_ConstantValue.m_InteractionDepthOffset
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1418,6 +1470,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1977933111783062866, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
   m_PrefabInstance: {fileID: 1025199345738201773}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3828740854002248422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8119733878576247492, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
+  m_PrefabInstance: {fileID: 1025199345738201773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3828740854002248427 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1885492524687841697, guid: 58d901df0788ad841823cfafd722efc9, type: 3}
