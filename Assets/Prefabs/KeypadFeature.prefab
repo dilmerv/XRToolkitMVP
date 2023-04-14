@@ -404,7 +404,7 @@ Transform:
   - {fileID: 969048285214778456}
   - {fileID: 4707612324755254090}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1885492524687841697
 MonoBehaviour:
@@ -706,7 +706,7 @@ MonoBehaviour:
     m_UseConstant: 1
     m_ConstantValue:
       m_PokeDirection: 1
-      m_InteractionDepthOffset: 0
+      m_InteractionDepthOffset: 0.1
       m_EnablePokeAngleThreshold: 1
       m_PokeAngleThreshold: 45
     m_Variable: {fileID: 0}

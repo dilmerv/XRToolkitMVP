@@ -399,7 +399,9 @@ MonoBehaviour:
   <AudioClipForOnStarted>k__BackingField: {fileID: 8300000, guid: fd619541a65f19e459278bab3e5aede7, type: 3}
   <AudioClipForOnEnded>k__BackingField: {fileID: 8300000, guid: ebee0c1b947b33c4ca6d0db87ee182e9, type: 3}
   featureUsage: 0
+  flashlightPivot: {fileID: 994934128450594742}
   on: 0
+  grabInteractable: {fileID: 7154328337358901829}
 --- !u!114 &492919223751876098
 MonoBehaviour:
   m_ObjectHideFlags: 0
