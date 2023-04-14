@@ -427,7 +427,7 @@ Transform:
   m_Children:
   - {fileID: 6718124898103358440}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9005760447052518038
 MeshFilter:
@@ -607,7 +607,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -627,7 +627,6 @@ MonoBehaviour:
   <AudioClipForOnEnded>k__BackingField: {fileID: 0}
   featureUsage: 0
   doorPivot: {fileID: 6718124898103358440}
-  minAngle: 0
   maxAngle: 150
   reverseAngleDirection: 1
   speed: 30
