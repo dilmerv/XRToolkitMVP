@@ -1,6 +1,5 @@
 using DilmerGames.Core.Singletons;
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,28 +20,32 @@ public class UIManager : Singleton<UIManager>
     public void Awake()
     {
         // bind to game manager events
-        GameManager.Instance.OnGamePaused += HandleMenuScene;
-        GameManager.Instance.OnGameResumed += HandleMenuScene;
+        GameManager.Instance.OnGamePaused += HandleMenuOptions;
+        GameManager.Instance.OnGameResumed += HandleMenuOptions;
 
         // bind menu buttons
         var menu = menuContainer.GetComponentInChildren<Menu>(true);
 
         menu.ResumeButton.onClick.AddListener(() =>
         {
-            HandleMenuScene(GameState.Playing);
+            HandleMenuOptions(GameState.Playing);
             OnGameResumeActionExecuted?.Invoke();
         });
 
-        menu.RestartButton.onClick.AddListener(() => StartCoroutine(RestartMainScene()));
+        menu.RestartButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene(GAME_SCENE_NAME);
+            OnGameResumeActionExecuted?.Invoke();
+        });
     }
 
     private void OnDestroy()
     {
-        GameManager.Instance.OnGamePaused -= HandleMenuScene;
-        GameManager.Instance.OnGameResumed -= HandleMenuScene;
+        GameManager.Instance.OnGamePaused -= HandleMenuOptions;
+        GameManager.Instance.OnGameResumed -= HandleMenuOptions;
     }
 
-    private void HandleMenuScene(GameState gameState)
+    private void HandleMenuOptions(GameState gameState)
     {
         if (gameState == GameState.Paused)
         {
@@ -61,13 +64,5 @@ public class UIManager : Singleton<UIManager>
         var playerHead = Camera.main.transform;
         menuContainer.transform.position = playerHead.position + (playerHead.forward * offsetPositionFromPlayer);
         menuContainer.transform.rotation = playerHead.rotation;
-    }
-
-    private IEnumerator RestartMainScene()
-    {
-        // This call doesn't work with the XR Simulator, I reported this to Unity
-        // and it is a known bug
-        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(GAME_SCENE_NAME);
-        yield return loadOperation;
     }
 }
