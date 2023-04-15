@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShatterFeature : BaseFeature
@@ -7,12 +5,19 @@ public class ShatterFeature : BaseFeature
     [SerializeField]
     private GameObject fracturedObject = null;
 
-    private GameObject fractureObj = null;
+    [SerializeField]
+    private GameObject insideObject = null;
+
+    [SerializeField]
+    private float minSpeed = 3f;
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.LogError("Entering collision");
-        Fracture();
+        float speed = collision.relativeVelocity.magnitude;
+        if(speed > minSpeed)
+        {
+            Fracture();
+        }
     }
 
     public void Fracture()
@@ -24,6 +29,11 @@ public class ShatterFeature : BaseFeature
 
         this.gameObject.SetActive(false);
 
-        fractureObj = Instantiate(fracturedObject, this.transform.position, this.transform.rotation);
+        Instantiate(fracturedObject, this.transform.position, this.transform.rotation);
+
+        if(insideObject != null)
+        {
+            Instantiate(insideObject, this.transform.position, this.transform.rotation);
+        }
     }
 }
