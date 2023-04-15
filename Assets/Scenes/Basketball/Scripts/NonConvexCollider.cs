@@ -1,4 +1,5 @@
 /*
+From: https://gist.github.com/rubbyzhang
 
 LICENSE
 The code is provided under the MIT License which is basically just to provide myself some basic legal security.
