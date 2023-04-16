@@ -16,12 +16,17 @@ public class ScoreDetector : MonoBehaviour
     {
         if(other.gameObject.CompareTag(basketballTag))
         {
-            ++score;
-            if(scoreText != null)
+            Vector3 dir = other.transform.position - transform.position;
+
+            // Only add score when the ball is entered from the top
+            if(dir.y > 0)
             {
-                scoreText.text = score.ToString();
+                ++score;
+                if (scoreText != null)
+                {
+                    scoreText.text = score.ToString();
+                }
             }
-            Debug.LogError(score);
         }
     }
 }
