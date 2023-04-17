@@ -730,7 +730,7 @@ GameObject:
   - component: {fileID: 5856785604694388844}
   m_Layer: 0
   m_Name: XR Origin (Player)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -749,7 +749,7 @@ Transform:
   m_Children:
   - {fileID: 6963989328221472494}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &6953154641755219354
 MonoBehaviour:

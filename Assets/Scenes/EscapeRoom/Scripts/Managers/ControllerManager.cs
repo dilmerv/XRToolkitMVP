@@ -13,7 +13,7 @@ public class ControllerManager : Singleton<ControllerManager>
     private XRRayInteractor[] cachedRayInteractors;
 
     [Header("Events")]
-    public Action OnControllerMenuActionExecuted;
+    public Action onControllerMenuActionExecuted;
 
     private void Awake()
     {
@@ -21,26 +21,29 @@ public class ControllerManager : Singleton<ControllerManager>
                FindObjectsSortMode.InstanceID);
 
         ControllerRayInteractorsInput();
+    }
 
+    private void OnEnable()
+    {
         // bind to controller events
         controllerMenuAction.action.performed += ControllerMenuActionPerformed;
 
         // bind to game manager events
-        GameManager.Instance.OnGamePaused += ControllerRayInteractorsInput;
-        GameManager.Instance.OnGameResumed += ControllerRayInteractorsInput;
+        GameManager.Instance.onGamePaused += ControllerRayInteractorsInput;
+        GameManager.Instance.onGameResumed += ControllerRayInteractorsInput;
     }
 
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         controllerMenuAction.action.performed -= ControllerMenuActionPerformed;
-        GameManager.Instance.OnGamePaused -= ControllerRayInteractorsInput;
-        GameManager.Instance.OnGameResumed -= ControllerRayInteractorsInput;
+        GameManager.Instance.onGamePaused -= ControllerRayInteractorsInput;
+        GameManager.Instance.onGameResumed -= ControllerRayInteractorsInput;
     }
 
     private void ControllerMenuActionPerformed(InputAction.CallbackContext obj)
     {
-        OnControllerMenuActionExecuted?.Invoke();
+        onControllerMenuActionExecuted?.Invoke();
     }
 
     public void ControllerRayInteractorsInput(GameState gameState = GameState.Playing)

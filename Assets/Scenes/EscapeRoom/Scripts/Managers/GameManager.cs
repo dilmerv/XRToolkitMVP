@@ -8,38 +8,62 @@ public class GameManager : Singleton<GameManager>
     public GameState GameState { get; private set; } = GameState.Playing;
 
     [Header("Events")]
-    public Action<GameState> OnGamePaused;
+    public Action<GameState> onGamePaused;
 
-    public Action<GameState> OnGameResumed;
+    public Action<GameState> onGameResumed;
+
+    public Action<GameState> onGameSolved;
 
     private LayerMask cachedCameraCullingMask;
 
     private void Awake()
     {
         cachedCameraCullingMask = Camera.main.cullingMask;
-        ControllerManager.Instance.OnControllerMenuActionExecuted += ChangeGameState;
-        UIManager.Instance.OnGameResumedActionExecuted += ChangeGameState;
     }
 
-    private void OnDestroy()
+    private void OnEnable()
     {
-        ControllerManager.Instance.OnControllerMenuActionExecuted -= ChangeGameState;
-        UIManager.Instance.OnGameResumedActionExecuted -= ChangeGameState;
+        ControllerManager.Instance.onControllerMenuActionExecuted += ToggleGameState;
+        UIManager.Instance.onGameResumedActionExecuted += ToggleGameState;
+        PuzzleSolverFeature.Instance.onPuzzleSolved += GameSolved;
     }
 
-    private void ChangeGameState()
+    private void OnDisable()
+    {
+        ControllerManager.Instance.onControllerMenuActionExecuted -= ToggleGameState;
+        UIManager.Instance.onGameResumedActionExecuted -= ToggleGameState;
+        PuzzleSolverFeature.Instance.onPuzzleSolved -= GameSolved;
+    }
+
+    private void GameSolved(GameState state)
+    {
+        GameState = state;
+        CommitGameStateChanges();
+    }
+    
+    private void ToggleGameState()
     {
         GameState = GameState == GameState.Playing ? GameState.Paused : GameState.Playing;
+        CommitGameStateChanges();
+    }
 
+    private void CommitGameStateChanges()
+    {
         if (GameState == GameState.Paused)
         {
-            OnGamePaused?.Invoke(GameState.Paused);
+            onGamePaused?.Invoke(GameState.Paused);
+            Time.timeScale = 0;
+            Camera.main.cullingMask = LayerMask.GetMask("UI");
+        }
+        else if(GameState == GameState.PuzzleSolved)
+        {
+            onGameSolved?.Invoke(GameState.PuzzleSolved);
             Time.timeScale = 0;
             Camera.main.cullingMask = LayerMask.GetMask("UI");
         }
         else
         {
-            OnGameResumed?.Invoke(GameState.Playing);
+            onGameResumed?.Invoke(GameState.Playing);
             Time.timeScale = 1;
             Camera.main.cullingMask = cachedCameraCullingMask;
         }
