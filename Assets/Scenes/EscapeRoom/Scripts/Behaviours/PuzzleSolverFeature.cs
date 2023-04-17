@@ -1,8 +1,7 @@
-using DilmerGames.Core.Singletons;
 using System;
 using UnityEngine;
 
-public class PuzzleSolverFeature : Singleton<PuzzleSolverFeature>
+public class PuzzleSolverFeature : MonoBehaviour
 {
     [SerializeField]
     private string playerTag;

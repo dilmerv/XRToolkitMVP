@@ -8,9 +8,7 @@ public class AudioManager : Singleton<AudioManager>
     [Header("Background Music Tracks")]
     [SerializeField]
     private AudioClip[] tracks;
-
     private AudioSource audioSource;
-
     [Header("Events")]
     public Action onCurrentTrackEnded;
 

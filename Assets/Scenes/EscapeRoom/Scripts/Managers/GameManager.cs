@@ -7,6 +7,10 @@ public class GameManager : Singleton<GameManager>
     [field: SerializeField]
     public GameState GameState { get; private set; } = GameState.Playing;
 
+    [Header("Linked Features")]
+    [SerializeField]
+    private PuzzleSolverFeature puzzleSolverFeature;
+
     [Header("Events")]
     public Action<GameState> onGamePaused;
 
@@ -25,14 +29,14 @@ public class GameManager : Singleton<GameManager>
     {
         ControllerManager.Instance.onControllerMenuActionExecuted += ToggleGameState;
         UIManager.Instance.onGameResumedActionExecuted += ToggleGameState;
-        PuzzleSolverFeature.Instance.onPuzzleSolved += GameSolved;
+        puzzleSolverFeature.onPuzzleSolved += GameSolved;
     }
 
     private void OnDisable()
     {
         ControllerManager.Instance.onControllerMenuActionExecuted -= ToggleGameState;
         UIManager.Instance.onGameResumedActionExecuted -= ToggleGameState;
-        PuzzleSolverFeature.Instance.onPuzzleSolved -= GameSolved;
+        puzzleSolverFeature.onPuzzleSolved -= GameSolved;
     }
 
     private void GameSolved(GameState state)

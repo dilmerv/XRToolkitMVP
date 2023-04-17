@@ -46,7 +46,8 @@ public class ControllerManager : Singleton<ControllerManager>
         onControllerMenuActionExecuted?.Invoke();
     }
 
-    public void ControllerRayInteractorsInput(GameState gameState = GameState.Playing)
+    public void ControllerRayInteractorsInput(GameState gameState = 
+        GameState.Playing)
     { 
         foreach(var rayInteractor in cachedRayInteractors)
         {
