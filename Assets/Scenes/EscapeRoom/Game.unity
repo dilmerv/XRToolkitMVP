@@ -2693,6 +2693,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 248287124185831666, guid: 20e024a3ac2f1aa4ca92f0055e45ee2b, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 1379640738502523113, guid: 20e024a3ac2f1aa4ca92f0055e45ee2b, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -3133,6 +3137,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4087357663082659074, guid: c718c390103bc9e4691c45341f0e0760, type: 3}
+      propertyPath: controllerMenuAction.m_Reference
+      value: 
+      objectReference: {fileID: -3444055958333689691, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 4411380413801863090, guid: c718c390103bc9e4691c45341f0e0760, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -3210,9 +3218,21 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 762907668}
+    - target: {fileID: 7320816559681296774, guid: 185b1f36edd02fc4791d85132c287fdd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8135409247341569013, guid: 185b1f36edd02fc4791d85132c287fdd, type: 3}
       propertyPath: m_Name
       value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135409247341569013, guid: 185b1f36edd02fc4791d85132c287fdd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269915377022515958, guid: 185b1f36edd02fc4791d85132c287fdd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

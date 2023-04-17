@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4540152722950435853}
   - component: {fileID: 9052481301552742143}
   - component: {fileID: 8030659279886380638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LibraryChair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6872674880588168589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

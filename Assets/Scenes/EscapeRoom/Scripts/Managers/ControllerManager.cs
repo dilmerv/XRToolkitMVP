@@ -31,6 +31,7 @@ public class ControllerManager : Singleton<ControllerManager>
         // bind to game manager events
         GameManager.Instance.onGamePaused += ControllerRayInteractorsInput;
         GameManager.Instance.onGameResumed += ControllerRayInteractorsInput;
+        GameManager.Instance.onGameSolved += ControllerRayInteractorsInput;
     }
 
 
@@ -39,6 +40,7 @@ public class ControllerManager : Singleton<ControllerManager>
         controllerMenuAction.action.performed -= ControllerMenuActionPerformed;
         GameManager.Instance.onGamePaused -= ControllerRayInteractorsInput;
         GameManager.Instance.onGameResumed -= ControllerRayInteractorsInput;
+        GameManager.Instance.onGameSolved -= ControllerRayInteractorsInput;
     }
 
     private void ControllerMenuActionPerformed(InputAction.CallbackContext obj)
