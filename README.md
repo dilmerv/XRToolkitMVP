@@ -5,6 +5,17 @@ A few MVP projects to apply all lessons learned through [Learn XR](https://www.l
 
 * Current MVP Project: Escape Room with a scary vibe !
 
+## Demo Unity Scenes (Features) 🎮
+|Scenes||
+|---|---|
+|**DoorFeature.unity**: usage of a door (with a socket) and a key|**MultipleDrawersFeature.unity**: using multiple drawers with a flashlight and pencils hidden inside|
+|<img src="https://github.com/dilmerv/XRToolkitMVP/blob/master/docs/images/DoorAndKeyFeature.gif" width="280">|<img src="https://github.com/dilmerv/XRToolkitMVP/blob/master/docs/images/MultiDrawerFeature.gif" width="280">|
+|**KeypadFeature.unity**: usage of a keypad to activate a door feature (opening a door)|**DrawerFeature.unity**: using a drawers with a key hidden inside|
+|<img src="https://github.com/dilmerv/XRToolkitMVP/blob/master/docs/images/KeypadFeature.gif" width="280">|<img src="https://github.com/dilmerv/XRToolkitMVP/blob/master/docs/images/DrawerAndKeyFeature.gif" width="280">|
+|**LockerFeature.unity**: usage of a locker which you can open and has a key hidden inside|**Game.unity** main game and it includes all features listed including a hidden flashlight|
+|<img src="https://github.com/dilmerv/XRToolkitMVP/blob/master/docs/images/LockersFeature.gif" width="280">|<img src="https://github.com/dilmerv/XRToolkitMVP/blob/master/docs/images/FlashlighFeature.gif" width="280">|
+
+
 ## Getting Started Info 📢
 * Unity 2022.2.13f1 required
 * XRI 2.3.0 included in project packages
