@@ -518,6 +518,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2517495816318428353, guid: 20e024a3ac2f1aa4ca92f0055e45ee2b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3814750495725477283, guid: 20e024a3ac2f1aa4ca92f0055e45ee2b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -565,6 +569,10 @@ PrefabInstance:
     - target: {fileID: 6048370997526991452, guid: 20e024a3ac2f1aa4ca92f0055e45ee2b, type: 3}
       propertyPath: m_Name
       value: XR Origin (Player)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721472075589411333, guid: 20e024a3ac2f1aa4ca92f0055e45ee2b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

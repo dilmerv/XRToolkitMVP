@@ -15,34 +15,41 @@ public class UIManager : Singleton<UIManager>
     private const string GAME_SCENE_NAME = "Game";
 
     [Header("Events")]
-    public Action OnGameResumedActionExecuted;
+    public Action onGameResumedActionExecuted;
+
+    private Menu menu;
 
     public void Awake()
     {
-        // bind to game manager events
-        GameManager.Instance.OnGamePaused += HandleMenuOptions;
-        GameManager.Instance.OnGameResumed += HandleMenuOptions;
-
         // bind menu buttons
-        var menu = menuContainer.GetComponentInChildren<Menu>(true);
+        menu = menuContainer.GetComponentInChildren<Menu>(true);
 
         menu.ResumeButton.onClick.AddListener(() =>
         {
             HandleMenuOptions(GameState.Playing);
-            OnGameResumedActionExecuted?.Invoke();
+            onGameResumedActionExecuted?.Invoke();
         });
 
         menu.RestartButton.onClick.AddListener(() =>
         {
             SceneManager.LoadScene(GAME_SCENE_NAME);
-            OnGameResumedActionExecuted?.Invoke();
+            onGameResumedActionExecuted?.Invoke();
         });
     }
 
-    private void OnDestroy()
+    private void OnEnable()
     {
-        GameManager.Instance.OnGamePaused -= HandleMenuOptions;
-        GameManager.Instance.OnGameResumed -= HandleMenuOptions;
+        // bind to game manager events
+        GameManager.Instance.onGamePaused += HandleMenuOptions;
+        GameManager.Instance.onGameResumed += HandleMenuOptions;
+        GameManager.Instance.onGameSolved += HandleMenuOptions;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.onGamePaused -= HandleMenuOptions;
+        GameManager.Instance.onGameResumed -= HandleMenuOptions;
+        GameManager.Instance.onGameSolved -= HandleMenuOptions;
     }
 
     private void HandleMenuOptions(GameState gameState)
@@ -50,6 +57,13 @@ public class UIManager : Singleton<UIManager>
         if (gameState == GameState.Paused)
         {
             menuContainer.SetActive(true);
+            PlaceMenuInFrontOfPlayer();
+        }
+        else if(gameState == GameState.PuzzleSolved)
+        {
+            menuContainer.SetActive(true);
+            menu.ResumeButton.gameObject.SetActive(false);
+            menu.SolvedText.gameObject.SetActive(true);
             PlaceMenuInFrontOfPlayer();
         }
         else

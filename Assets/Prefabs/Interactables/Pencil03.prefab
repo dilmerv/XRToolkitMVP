@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4760076343018210728}
   - component: {fileID: 4134630824461152738}
   - component: {fileID: 6979224430567844700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pencil03
   m_TagString: Untagged
   m_Icon: {fileID: 0}

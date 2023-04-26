@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2413480558657041488}
   - component: {fileID: 1172936138200853981}
   - component: {fileID: 6285955189495459507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CardboardBoxB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7494579791397953096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

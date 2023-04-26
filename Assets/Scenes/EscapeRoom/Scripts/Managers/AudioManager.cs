@@ -8,11 +8,9 @@ public class AudioManager : Singleton<AudioManager>
     [Header("Background Music Tracks")]
     [SerializeField]
     private AudioClip[] tracks;
-
     private AudioSource audioSource;
-
     [Header("Events")]
-    public Action OnCurrentTrackEnded;
+    public Action onCurrentTrackEnded;
 
     public void Awake()
     {
@@ -36,7 +34,7 @@ public class AudioManager : Singleton<AudioManager>
         {
             yield return new WaitUntil(() => !audioSource.isPlaying);
             ShuffleAndPlay();
-            OnCurrentTrackEnded?.Invoke();
+            onCurrentTrackEnded?.Invoke();
         }
     }
 }

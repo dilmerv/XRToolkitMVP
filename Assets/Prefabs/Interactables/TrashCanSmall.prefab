@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1778595369645641882}
   - component: {fileID: 7090679752560017177}
   - component: {fileID: 6710722152379685471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TrashCanSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7143979404417658062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
