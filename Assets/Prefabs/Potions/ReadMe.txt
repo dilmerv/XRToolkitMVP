@@ -1,1 +1,0 @@
-3 potions models with substances that allow changing colors of liquid inside bottle. 1024x1024 textures. Diffuse, normal and metallic maps.
