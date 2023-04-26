@@ -406,6 +406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 8721472075589411333, guid: 20e024a3ac2f1aa4ca92f0055e45ee2b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

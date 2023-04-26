@@ -15,5 +15,6 @@ public enum FeatureDirection
 public enum GameState
 {
     Playing,
-    Paused
+    Paused,
+    PuzzleSolved
 }

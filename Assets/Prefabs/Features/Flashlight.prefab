@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5566675517062086942}
   - component: {fileID: 298197220703460981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 492919223751876098}
   - component: {fileID: 4367729879508584943}
   - component: {fileID: 1840584731354226226}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ Transform:
   - {fileID: 1765291962215157168}
   - {fileID: 5566675517062086942}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!33 &214772256564833644
 MeshFilter:
@@ -544,7 +544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1765291962215157168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

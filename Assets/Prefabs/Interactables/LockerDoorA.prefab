@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8136898779711852068}
   - component: {fileID: 2571356920886477022}
   - component: {fileID: 8477331450267817458}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LockerDoorA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6560680241153251792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
